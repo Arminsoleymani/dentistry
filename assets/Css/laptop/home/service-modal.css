@@ -1,0 +1,174 @@
+/* Service Modal Styles */
+.service-modal {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1050;
+  max-width: 400px;
+  width: 100%;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.service-modal.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.service-modal .modal-content {
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.service-modal .modal-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 15px 20px;
+}
+
+.service-modal .modal-body {
+  padding: 20px;
+}
+
+.service-modal .modal-footer {
+  border-top: 1px solid #f0f0f0;
+  padding: 15px 20px;
+}
+
+.service-modal .btn-close {
+  opacity: 0.7;
+}
+.modal-header .btn-close{
+  margin-left: 0 !important;
+}
+.service-modal .btn-close:hover {
+  opacity: 1;
+}
+
+/* Custom button styles for the modal */
+.service-modal .btn-primary {
+  background-color: #6997ff;
+  border-color: #6997ff;
+}
+
+.service-modal .btn-primary:hover {
+  background-color: #5a85e6;
+  border-color: #5a85e6;
+}
+
+.service-modal .btn-secondary {
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+  color: #333;
+}
+
+.service-modal .btn-secondary:hover {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+/* Login Modal Styles */
+.login-modal .modal-header {
+  justify-content: space-between;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.login-modal .modal-title {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+  color: rgba(4, 10, 31, 0.87);
+}
+
+.login-modal .modal-body {
+  text-align: right;
+}
+.login-modal .modal-body p{
+  font-size: 14px;
+}
+.login-modal .modal-body p b{
+  font-weight: 700;
+}
+.login-modal .form-label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.login-modal .form-control {
+  direction: ltr;
+  text-align: left;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.login-modal .form-control:focus {
+  border-color: #6997ff;
+  box-shadow: 0 0 0 0.25rem rgba(105, 151, 255, 0.25);
+}
+
+.login-modal .btn-continue {
+  width: 100%;
+  background-color: rgb(0, 143, 255);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.login-modal .btn-continue:hover {
+  background-color: rgb(0, 100, 178);
+  color: white;
+}
+
+/* Floating Action Button */
+.floating-action-btn {
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    box-shadow: 0 1px 5px 0 rgba(74, 74, 74, .2), 0 2px 2px 0 rgba(74, 74, 74, .1), 0 3px 1px -2px rgba(74, 74, 74, .1);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.floating-action-btn i {
+  font-size: 24px;
+}
+
+.animations_Spin__ejFxD {
+  animation: animations_Spin__gXAv3 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes animations_Spin__gXAv3 {
+  0% {
+      transform: rotate(0deg);
+  }
+  
+  40% {
+      transform: rotate(-1turn);
+  }
+  100% {
+      transform: rotate(-1turn);
+  }
+}
