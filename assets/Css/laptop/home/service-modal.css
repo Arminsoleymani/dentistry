@@ -48,8 +48,8 @@
 
 /* Custom button styles for the modal */
 .service-modal .btn-primary {
-  background-color: #6997ff;
-  border-color: #6997ff;
+  background-color: #008c95 !important;
+  border-color: #008c95 !important;
 }
 
 .service-modal .btn-primary:hover {
@@ -110,13 +110,13 @@
 }
 
 .login-modal .form-control:focus {
-  border-color: #6997ff;
+  border-color: #008c95 !important;
   box-shadow: 0 0 0 0.25rem rgba(105, 151, 255, 0.25);
 }
 
 .login-modal .btn-continue {
   width: 100%;
-  background-color: rgb(0, 143, 255);
+  background-color: #008c95;
   color: white;
   border: none;
   border-radius: 8px;
@@ -127,7 +127,7 @@
 }
 
 .login-modal .btn-continue:hover {
-  background-color: rgb(0, 100, 178);
+  background-color: #05a5b0;
   color: white;
 }
 
