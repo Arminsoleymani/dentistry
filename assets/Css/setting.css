@@ -1,0 +1,22 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: IranSans;
+    list-style-type: none;
+    text-decoration: none;
+    /* outline: 1px solid red; */
+}
+
+@font-face {
+    font-family: IranSans;
+    src: url(../Fonts/IRANSansXFaNum-Medium.eot);
+    src: url(../Fonts/IRANSansXFaNum-Medium.woff2);
+    src: url(../Fonts/IRANSansXFaNum-Medium.woff);
+    src: url(../Fonts/IRANSansXFaNum-Medium.ttf);
+}
+
+
+html, body {
+    overflow-x: hidden;
+  }
