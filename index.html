@@ -10,6 +10,7 @@
     rel="stylesheet"
     href="./bootstrap/dist/css/bootstrap.min.css"
   />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
     <!-- هدر -->
@@ -39,12 +40,12 @@
                         <span>021-12345678</span>
                     </div>
                     <a href="#appointment" 
-                    class="btn btn-primary"
-                    class="login-btn"
+                    class="btnn btnn-primary"
+                    class="login-btnn"
                     data-bs-toggle="modal"
                      data-bs-target="#loginModal"
-                    >نوبت دهی آنلاین
-                    </a>
+                    >
+                    ورود / ثبت نام                    </a>
                 </div>
             </div>
 
@@ -70,38 +71,168 @@
           ></button>
         </div>
         <div class="modal-body">
-          <p>
-            برای <b>ورود</b> یا <b>ثبت‌نام</b> ایمیل خود را وارد
-            کنید.
-          </p>
-          <div class="mb-3">
-            <label for="phoneNumber" class="form-label">ایمیل :</label>
-            <input
-              type="tel"
-              class="form-control"
-              id="phoneNumber"
-              placeholder="@gmail.com"
-              dir="ltr"
-            />
-          </div>
-          <button type="button" class="btn btn-continue">ادامه</button>
+            <!-- Step 1: Email Input -->
+            <div class="step step-1 active">
+                <p>
+                    برای <b>ورود</b> یا <b>ثبت‌نام</b> ایمیل خود را وارد
+                    کنید.
+                </p>
+                <div class="mb-3">
+                    <label for="email" class="form-label">ایمیل :</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="@gmail.com"
+                        dir="ltr"
+                    />
+                </div>
+                <button type="button" class="btn btn-continue" onclick="nextStep(2)">ادامه</button>
+            </div>
+
+            <!-- Step 2: Verification Code -->
+            <div class="step step-2">
+                <p>کد تایید به ایمیل شما ارسال شد</p>
+                <div class="mb-3">
+                    <label for="verificationCode" class="form-label">کد تایید :</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="verificationCode"
+                        placeholder="_ _ _ _ _ _"
+                        maxlength="6"
+                        dir="ltr"
+                    />
+                </div>
+                <button type="button" class="btn btn-continue" onclick="nextStep(3)">تایید</button>
+                <button type="button" class="btn btn-link" onclick="prevStep(1)">بازگشت</button>
+            </div>
+
+            <!-- Step 3: Additional Info -->
+            <div class="step step-3">
+                <p>لطفا اطلاعات خود را تکمیل کنید</p>
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">نام :</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="firstName"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">نام خانوادگی :</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="lastName"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">شماره موبایل :</label>
+                    <input
+                        type="tel"
+                        class="form-control"
+                        id="phoneNumber"
+                        placeholder="09xxxxxxxxx"
+                        dir="ltr"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">رمز عبور :</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        dir="ltr"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">تکرار رمز عبور :</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="confirmPassword"
+                        dir="ltr"
+                    />
+                </div>
+                <div class="form-check mb-3">
+                    <input type="checkbox" class="form-check-input" id="terms">
+                    <label class="form-check-label" for="terms">
+                        قوانین و مقررات را می‌پذیرم
+                    </label>
+                </div>
+                <button type="button" class="btn btn-continue">ثبت نام</button>
+                <button type="button" class="btn btn-link" onclick="prevStep(1)">بازگشت</button>
+            </div>
         </div>
       </div>
     </div>
   </div>
 
     <!-- اسلایدر اصلی -->
-    <section class="hero-slider">
+    <!-- <section class="hero-slider">
         <div class="slide active">
             <div class="slide-content">
                 <h1>لبخندی زیبا با تخصص و تجربه</h1>
                 <p>با استفاده از پیشرفته‌ترین تکنولوژی‌های روز دنیا</p>
-                <a href="#appointment" class="btn btn-primary">دریافت نوبت</a>
-                <a href="#services" class="btn btn-outline">خدمات ما</a>
+                <a href="#appointment" class="btnn btnn-primary">دریافت نوبت</a>
+                <a href="#services" class="btnn btnn-outline">خدمات ما</a>
             </div>
             <img src="./assets/Images/reception.jpg" alt="کلینیک دندانپزشکی">
         </div>
-    </section>
+        <div class="slide">
+            <div class="slide-content">
+                <h1>تجهیزات مدرن دندانپزشکی</h1>
+                <p>ارائه خدمات با بالاترین کیفیت و استانداردهای جهانی</p>
+                <a href="#appointment" class="btnn btnn-primary">دریافت نوبت</a>
+                <a href="#services" class="btnn btnn-outline">خدمات ما</a>
+            </div>
+            <img src="./assets/Images/reception.jpg" alt="تجهیزات مدرن">
+        </div>
+        <div class="slide">
+            <div class="slide-content">
+                <h1>تیم متخصص و با تجربه</h1>
+                <p>ارائه مشاوره تخصصی و درمان با بهترین متخصصین</p>
+                <a href="#appointment" class="btnn btnn-primary">دریافت نوبت</a>
+                <a href="#services" class="btnn btnn-outline">خدمات ما</a>
+            </div>
+            <img src="./assets/Images/reception.jpg" alt="تیم متخصص">
+        </div>
+
+        <div class="slider-dots"></div>
+    </section> -->
+    <div class="swiper mainslider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <h1>لبخندی زیبا با تخصص و تجربه</h1>
+                    <p>با استفاده از پیشرفته‌ترین تکنولوژی‌های روز دنیا</p>
+                    <a href="#appointment" class="btnn btnn-primary">دریافت نوبت</a>
+                    <a href="#services" class="btnn btnn-outline">خدمات ما</a>
+                </div>
+                <img src="./assets/Images/reception.jpg" alt="کلینیک دندانپزشکی">
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <h1>تجهیزات مدرن دندانپزشکی</h1>
+                    <p>ارائه خدمات با بالاترین کیفیت و استانداردهای جهانی</p>
+                    <a href="#appointment" class="btnn btnn-primary">دریافت نوبت</a>
+                    <a href="#services" class="btnn btnn-outline">خدمات ما</a>
+                </div>
+                <img src="./assets/Images/taupe-dental-chair-landscape-1536x1024-1.webp" alt="تجهیزات مدرن">
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <h1>تیم متخصص و با تجربه</h1>
+                    <p>ارائه مشاوره تخصصی و درمان با بهترین متخصصین</p>
+                    <a href="#appointment" class="btnn btnn-primary">دریافت نوبت</a>
+                    <a href="#services" class="btnn btnn-outline">خدمات ما</a>
+                </div>
+                <img src="./assets/Images/clinic-3.jpg" alt="تیم متخصص">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
 
     <!-- خدمات ویژه -->
     <section class="featured-services">
@@ -141,7 +272,7 @@
                     <li><i class="fas fa-check"></i> تجهیزات پیشرفته و تکنولوژی روز</li>
                     <li><i class="fas fa-check"></i> گارانتی خدمات ارائه شده</li>
                 </ul>
-                <a href="#about" class="btn btn-primary">اطلاعات بیشتر</a>
+                <a href="#about" class="btnn btnn-primary">اطلاعات بیشتر</a>
             </div>
             <div class="about-image">
                 <img src="./assets/Images/dorow-clinic-waldshut-gebaeude2.webp" alt="درباره کلینیک">
@@ -213,7 +344,7 @@
                 <div class="form-group">
                     <input type="date" placeholder="تاریخ مورد نظر" required>
                 </div>
-                <button type="submit" class="btn btn-primary">ثبت درخواست نوبت</button>
+                <button type="submit" class="btnn btnn-primary">ثبت درخواست نوبت</button>
             </form>
         </div>
     </section>
@@ -263,6 +394,89 @@
             </div>
         </div>
     </footer>
+    <div class="floating-reserve">
+        <a href="#" class="reserve-btn">
+            <span>رزرو نوبت</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="#ffffff" d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/>
+            </svg>
+        </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+
+      <script>
+        var swiper = new Swiper(".mainslider", {
+          spaceBetween: 30,
+          centeredSlides: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+
+
+
+<script>
+    function nextStep(step) {
+        // Hide all steps
+        document.querySelectorAll('.step').forEach(el => {
+            el.classList.remove('active');
+        });
+        // Show target step
+        document.querySelector('.step-' + step).classList.add('active');
+    }
+    
+    function prevStep(step) {
+        // Hide all steps
+        document.querySelectorAll('.step').forEach(el => {
+            el.classList.remove('active');
+        });
+        // Show previous step
+        document.querySelector('.step-' + step).classList.add('active');
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+                const termsCheckbox = document.getElementById('terms');
+                const submitButton = termsCheckbox.closest('.step').querySelector('.btn-continue');
+                
+                // Set initial state
+                submitButton.style.backgroundColor = '#ccc';
+                submitButton.style.cursor = 'not-allowed';
+                submitButton.disabled = true;
+                
+                termsCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        submitButton.style.backgroundColor = '#008c95';
+                        submitButton.style.cursor = 'pointer';
+                        submitButton.disabled = false;
+                    } else {
+                        submitButton.style.backgroundColor = '#ccc';
+                        submitButton.style.cursor = 'not-allowed';
+                        submitButton.disabled = true;
+                    }
+                });
+            });
+    
+    </script>
 </body>
 </html>
