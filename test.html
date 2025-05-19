@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رزرو نوبت - کلینیک دندانپزشکی مروارید</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="./assets/Css/book-main.css">
+</head>
+<body class="booking-page">
+    <!-- هدر (همان کد قبلی) -->
+    <header class="booking-header">
+        <div class="container">
+            <a href="./index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path fill="#0fcdd7" d="M186.1 52.1C169.3 39.1 148.7 32 127.5 32C74.7 32 32 74.7 32 127.5l0 6.2c0 15.8 3.7 31.3 10.7 45.5l23.5 47.1c4.5 8.9 7.6 18.4 9.4 28.2l36.7 205.8c2 11.2 11.6 19.4 22.9 19.8s21.4-7.4 24-18.4l28.9-121.3C192.2 323.7 207 312 224 312s31.8 11.7 35.8 28.3l28.9 121.3c2.6 11.1 12.7 18.8 24 18.4s20.9-8.6 22.9-19.8l36.7-205.8c1.8-9.8 4.9-19.3 9.4-28.2l23.5-47.1c7.1-14.1 10.7-29.7 10.7-45.5l0-2.1c0-55-44.6-99.6-99.6-99.6c-24.1 0-47.4 8.8-65.6 24.6l-3.2 2.8 19.5 15.2c7 5.4 8.2 15.5 2.8 22.5s-15.5 8.2-22.5 2.8l-24.4-19-37-28.8z"></path>
+                </svg>                <span>کلینیک تخصصی دندانپزشکی مروارید</span>
+            </a>
+            <div class="steps-indicator">
+                <div class="step active">
+                    <span class="step-number">1</span>
+                    <span class="step-title">انتخاب خدمت</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <span class="step-title">انتخاب پزشک</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <span class="step-title">انتخاب زمان</span>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <span class="step-title">تکمیل اطلاعات</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- محتوای اصلی -->
+    <main class="booking-container">
+        <div class="container">
+            <div class="booking-content">
+                <section class="booking-section active" id="service-selection">
+                    <h2>خدمت مورد نظر خود را انتخاب کنید</h2>
+                    <div class="service-categories">
+                        <div class="category-card active" data-category="general">
+                            <i class="fas fa-tooth"></i>
+                            <span>معاینات عمومی</span>
+                        </div>
+                        <div class="category-card" data-category="cosmetic">
+                            <i class="fas fa-smile"></i>
+                            <span>زیبایی دندان</span>
+                        </div>
+                        <div class="category-card" data-category="implant">
+                            <i class="fas fa-teeth"></i>
+                            <span>ایمپلنت</span>
+                        </div>
+                        <div class="category-card" data-category="ortho">
+                            <i class="fas fa-teeth-open"></i>
+                            <span>ارتودنسی</span>
+                        </div>
+                    </div>
+
+                    <div class="services-list">
+                        <div class="service-item" data-category="general">
+                            <div class="service-info">
+                                <h3>معاینه اولیه و مشاوره</h3>
+                                <p>معاینه کامل دندان‌ها و مشاوره با پزشک متخصص</p>
+                            </div>
+                            <div class="service-action">
+                                <span class="price">رایگان</span>
+                                <button class="btn btn-primary select-service">انتخاب</button>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item" data-category="cosmetic">
+                            <div class="service-info">
+                                <h3>لمینت سرامیکی</h3>
+                                <p>پوشش زیبایی برای دندان‌های جلو</p>
+                            </div>
+                            <div class="service-action">
+                                <span class="price">3,500,000 تومان</span>
+                                <button class="btn btn-primary select-service">انتخاب</button>
+                            </div>
+                        </div>
+                        
+                        <!-- خدمات دیگر -->
+                    </div>
+                </section>
+
+                <!-- بخش انتخاب پزشک -->
+                <section class="booking-section" id="doctor-selection">
+                    <h2>پزشک مورد نظر خود را انتخاب کنید</h2>
+                    <div class="doctors-list">
+                        <div class="doctor-card selected">
+                            <div class="doctor-image">
+                                <img src="images/doctor-1.jpg" alt="دکتر سارا محمدی">
+                            </div>
+                            <div class="doctor-info">
+                                <h3>دکتر سارا محمدی</h3>
+                                <p>متخصص دندانپزشکی زیبایی</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.7 (124 نظر)</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline select-doctor">انتخاب</button>
+                        </div>
+                        
+                        <div class="doctor-card">
+                            <div class="doctor-image">
+                                <img src="images/doctor-2.jpg" alt="دکتر امیر رضایی">
+                            </div>
+                            <div class="doctor-info">
+                                <h3>دکتر امیر رضایی</h3>
+                                <p>متخصص ایمپلنت و جراحی لثه</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.2 (89 نظر)</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline select-doctor">انتخاب</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- بخش انتخاب زمان -->
+                <section class="booking-section" id="time-selection">
+                    <h2>زمان مراجعه را انتخاب کنید</h2>
+                    <div class="date-selection">
+                        <div class="date-picker">
+                            <input type="text" id="booking-date" placeholder="تاریخ را انتخاب کنید">
+                        </div>
+                        <div class="available-times">
+                            <h3>زمان‌های موجود</h3>
+                            <div class="time-slots">
+                                <button class="time-slot">08:00 صبح</button>
+                                <button class="time-slot">09:30 صبح</button>
+                                <button class="time-slot">11:00 صبح</button>
+                                <button class="time-slot">13:30 بعدازظهر</button>
+                                <button class="time-slot">15:00 بعدازظهر</button>
+                                <button class="time-slot">16:30 بعدازظهر</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- بخش تکمیل اطلاعات -->
+                <section class="booking-section" id="info-completion">
+                    <h2>اطلاعات خود را وارد کنید</h2>
+                    <form class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullname">نام و نام خانوادگی</label>
+                                <input type="text" id="fullname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">شماره تماس</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">ایمیل (اختیاری)</label>
+                                <input type="email" id="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="national-id">کد ملی (اختیاری)</label>
+                                <input type="text" id="national-id">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="notes">توضیحات (اختیاری)</label>
+                            <textarea id="notes" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">تکمیل رزرو نوبت</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+                
+                <!-- بخش تأیید نهایی (جدید) -->
+                <section class="booking-section" id="confirmation">
+                    <div class="confirmation-content">
+                        <div class="confirmation-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>نوبت شما با موفقیت ثبت شد!</h2>
+                        <div class="confirmation-details">
+                            <div class="detail-item">
+                                <span class="detail-label">کد رزرو:</span>
+                                <span class="detail-value" id="booking-code">DL-284759</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">خدمت:</span>
+                                <span class="detail-value" id="confirmed-service">لمینت سرامیکی</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">پزشک:</span>
+                                <span class="detail-value" id="confirmed-doctor">دکتر سارا محمدی</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">تاریخ و زمان:</span>
+                                <span class="detail-value" id="confirmed-time">چهارشنبه 15 شهریور 1402 - ساعت 10:30 صبح</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">هزینه:</span>
+                                <span class="detail-value" id="confirmed-price">3,500,000 تومان</span>
+                            </div>
+                        </div>
+                        <div class="confirmation-actions">
+                            <button class="btn btn-primary" id="print-booking">
+                                <i class="fas fa-print"></i> چاپ رسید
+                            </button>
+                            <button class="btn btn-outline" id="new-booking">
+                                <i class="fas fa-calendar-plus"></i> رزرو جدید
+                            </button>
+                        </div>
+                        <div class="confirmation-note">
+                            <p><i class="fas fa-info-circle"></i> لطفا 15 دقیقه قبل از زمان مقرر در کلینیک حضور داشته باشید.</p>
+                            <p>در صورت نیاز به تغییر یا لغو نوبت، لطفا با شماره 021-12345678 تماس بگیرید.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- سایدبار خلاصه رزرو (همان کد قبلی) -->
+            <aside class="booking-summary">
+                <h3>خلاصه رزرو</h3>
+                <div class="summary-content">
+                    <div class="summary-item">
+                        <span class="summary-label">خدمت:</span>
+                        <span class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">پزشک:</span>
+                        <span class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">تاریخ و زمان:</span>
+                        <span class="summary-value">-</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-item total">
+                        <span class="summary-label">هزینه:</span>
+                        <span class="summary-value">0 تومان</span>
+                    </div>
+                </div>
+                
+                <div class="clinic-info">
+                    <h4>اطلاعات کلینیک</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> تهران، خیابان ولیعصر، پلاک 123</p>
+                    <p><i class="fas fa-phone"></i> 021-12345678</p>
+                    <p><i class="fas fa-clock"></i> شنبه تا چهارشنبه: 8:30 تا 19:00</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- فوتر (همان کد قبلی) -->
+    <footer class="booking-footer">
+        <div class="container">
+            <p>© 2023 کلینیک دندانپزشکی مروارید. تمام حقوق محفوظ است.</p>
+            <div class="footer-links">
+                <a href="#">قوانین و مقررات</a>
+                <a href="#">حریم خصوصی</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/fa.js"></script>
+    <script>
+        // مدیریت مراحل رزرو
+        document.addEventListener('DOMContentLoaded', function() {
+            // متغیرهای ذخیره اطلاعات رزرو
+            const bookingData = {
+                service: null,
+                doctor: null,
+                date: null,
+                time: null,
+                patientInfo: {}
+            };
+
+            // عناصر DOM
+            const steps = document.querySelectorAll('.step');
+            const sections = document.querySelectorAll('.booking-section');
+            const nextButtons = document.querySelectorAll('.next-step');
+            const prevButtons = document.querySelectorAll('.prev-step');
+            const summaryItems = document.querySelectorAll('.summary-item .summary-value');
+            const bookingForm = document.querySelector('.booking-form');
+            const confirmationSection = document.getElementById('confirmation');
+            
+            // فعال سازی تقویم فارسی
+            flatpickr("#booking-date", {
+                locale: "fa",
+                minDate: "today",
+                disable: [
+                    function(date) {
+                        // غیرفعال کردن جمعه‌ها
+                        return (date.getDay() === 5);
+                    }
+                ]
+            });
+
+            // مدیریت انتخاب خدمت
+            const serviceItems = document.querySelectorAll('.service-item');
+            serviceItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // حذف انتخاب قبلی
+                    serviceItems.forEach(s => s.classList.remove('selected'));
+                    
+                    // انتخاب جدید
+                    this.classList.add('selected');
+                    
+                    // ذخیره اطلاعات
+                    const serviceName = this.querySelector('h3').textContent;
+                    const servicePrice = this.querySelector('.price').textContent;
+                    bookingData.service = {
+                        name: serviceName,
+                        price: servicePrice
+                    };
+                    
+                    // به‌روزرسانی خلاصه
+                    summaryItems[0].textContent = serviceName;
+                    summaryItems[3].textContent = servicePrice;
+                    
+                    // فعال کردن مرحله بعد
+                    steps[0].classList.remove('active');
+                    steps[1].classList.add('active');
+                    sections[0].classList.remove('active');
+                    sections[1].classList.add('active');
+                });
+            });
+
+            // مدیریت انتخاب پزشک
+            const doctorCards = document.querySelectorAll('.doctor-card');
+            doctorCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // حذف انتخاب قبلی
+                    doctorCards.forEach(d => d.classList.remove('selected'));
+                    
+                    // انتخاب جدید
+                    this.classList.add('selected');
+                    
+                    // ذخیره اطلاعات
+                    const doctorName = this.querySelector('h3').textContent;
+                    bookingData.doctor = doctorName;
+                    
+                    // به‌روزرسانی خلاصه
+                    summaryItems[1].textContent = doctorName;
+                    
+                    // فعال کردن مرحله بعد
+                    steps[1].classList.remove('active');
+                    steps[2].classList.add('active');
+                    sections[1].classList.remove('active');
+                    sections[2].classList.add('active');
+                });
+            });
+
+            // مدیریت انتخاب زمان
+            const timeSlots = document.querySelectorAll('.time-slot');
+            timeSlots.forEach(slot => {
+                slot.addEventListener('click', function() {
+                    // حذف انتخاب قبلی
+                    timeSlots.forEach(t => t.classList.remove('selected'));
+                    
+                    // انتخاب جدید
+                    this.classList.add('selected');
+                    
+                    // ذخیره اطلاعات
+                    const selectedTime = this.textContent;
+                    const selectedDate = document.getElementById('booking-date').value;
+                    
+                    bookingData.time = selectedTime;
+                    bookingData.date = selectedDate;
+                    
+                    // به‌روزرسانی خلاصه
+                    const dateObj = new Date(selectedDate);
+                    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                    const persianDate = dateObj.toLocaleDateString('fa-IR', options);
+                    summaryItems[2].textContent = `${persianDate} - ساعت ${selectedTime}`;
+                    
+                    // فعال کردن مرحله بعد
+                    steps[2].classList.remove('active');
+                    steps[3].classList.add('active');
+                    sections[2].classList.remove('active');
+                    sections[3].classList.add('active');
+                });
+            });
+
+            // مدیریت فرم اطلاعات
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // جمع‌آوری اطلاعات فرم
+                bookingData.patientInfo = {
+                    fullname: document.getElementById('fullname').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    nationalId: document.getElementById('national-id').value,
+                    notes: document.getElementById('notes').value
+                };
+                
+                // پر کردن بخش تأیید
+                document.getElementById('confirmed-service').textContent = bookingData.service.name;
+                document.getElementById('confirmed-doctor').textContent = bookingData.doctor;
+                document.getElementById('confirmed-price').textContent = bookingData.service.price;
+                
+                const dateObj = new Date(bookingData.date);
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                const persianDate = dateObj.toLocaleDateString('fa-IR', options);
+                document.getElementById('confirmed-time').textContent = `${persianDate} - ساعت ${bookingData.time}`;
+                
+                // تولید کد رزرو تصادفی
+                const randomCode = 'DL-' + Math.floor(100000 + Math.random() * 900000);
+                document.getElementById('booking-code').textContent = randomCode;
+                
+                // نمایش بخش تأیید
+                steps[3].classList.remove('active');
+                sections[3].classList.remove('active');
+                confirmationSection.classList.add('active');
+                
+                // اسکرول به بالا
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // دکمه چاپ رسید
+            document.getElementById('print-booking').addEventListener('click', function() {
+                window.print();
+            });
+
+            // دکمه رزرو جدید
+            document.getElementById('new-booking').addEventListener('click', function() {
+                // ریست تمام مراحل
+                steps.forEach(step => step.classList.remove('active'));
+                steps[0].classList.add('active');
+                
+                sections.forEach(section => section.classList.remove('active'));
+                sections[0].classList.add('active');
+                
+                // ریست فرم
+                bookingForm.reset();
+                
+                // ریست انتخاب‌ها
+                serviceItems.forEach(item => item.classList.remove('selected'));
+                doctorCards.forEach(card => card.classList.remove('selected'));
+                timeSlots.forEach(slot => slot.classList.remove('selected'));
+                
+                // ریست خلاصه
+                summaryItems.forEach(item => item.textContent = '-');
+                summaryItems[3].textContent = '0 تومان';
+                
+                // ریست داده‌ها
+                Object.keys(bookingData).forEach(key => {
+                    if (typeof bookingData[key] === 'object') {
+                        bookingData[key] = {};
+                    } else {
+                        bookingData[key] = null;
+                    }
+                });
+                
+                // اسکرول به بالا
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // مدیریت تبلیغات و پیشنهادات ویژه
+            const specialOffers = [
+                {
+                    title: "پکیج ویژه سفید کردن دندان",
+                    description: "بلیچینگ حرفه‌ای + جرمگیری + بروساژ",
+                    price: "2,500,000 تومان",
+                    discount: "30%"
+                },
+                {
+                    title: "معاینه رایگان کودکان",
+                    description: "معاینه و مشاوره رایگان برای کودکان زیر 12 سال",
+                    price: "رایگان",
+                    discount: "100%"
+                }
+            ];
+
+            // نمایش تبلیغات در سایدبار
+            const offersContainer = document.createElement('div');
+            offersContainer.className = 'special-offers';
+            offersContainer.innerHTML = `
+                <h4>پیشنهادات ویژه</h4>
+                <div class="offers-list">
+                    ${specialOffers.map(offer => `
+                        <div class="offer-card">
+                            <div class="offer-badge">${offer.discount} تخفیف</div>
+                            <h5>${offer.title}</h5>
+                            <p>${offer.description}</p>
+                            <span class="offer-price">${offer.price}</span>
+                            <button class="btn btn-outline">رزرو این خدمت</button>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            document.querySelector('.booking-summary').appendChild(offersContainer);
+
+            // مدیریت کلیک روی پیشنهادات ویژه
+            document.querySelectorAll('.offer-card .btn').forEach((btn, index) => {
+                btn.addEventListener('click', function() {
+                    // انتخاب خودکار خدمت مربوطه
+                    serviceItems[index + 1].click();
+                    
+                    // اسکرول به بخش خدمات
+                    document.querySelector('.booking-content').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+<section class="booking-section active" id="service-selection">
+    // ... existing code ...
+    <div class="services-list">
+        // ... existing code ...
+    </div>
+    <div class="section-actions">
+        <button class="btn btn-primary next-step" data-next="doctor-selection" disabled>
+            ادامه <i class="fas fa-arrow-left"></i>
+        </button>
+    </div>
+</section>
+
+<section class="booking-section" id="doctor-selection">
+    // ... existing code ...
+    <div class="doctors-list">
+        // ... existing code ...
+    </div>
+    <div class="section-actions">
+        <button class="btn btn-outline prev-step" data-prev="service-selection">
+            <i class="fas fa-arrow-right"></i> قبلی
+        </button>
+        <button class="btn btn-primary next-step" data-next="time-selection" disabled>
+            ادامه <i class="fas fa-arrow-left"></i>
+        </button>
+    </div>
+</section>
+
+<section class="booking-section" id="time-selection">
+    // ... existing code ...
+    <div class="date-selection">
+        // ... existing code ...
+    </div>
+    <div class="section-actions">
+        <button class="btn btn-outline prev-step" data-prev="doctor-selection">
+            <i class="fas fa-arrow-right"></i> قبلی
+        </button>
+        <button class="btn btn-primary next-step" data-next="info-completion" disabled>
+            ادامه <i class="fas fa-arrow-left"></i>
+        </button>
+    </div>
+</section>
+
+<section class="booking-section" id="info-completion">
+    // ... existing code ...
+    <form class="booking-form">
+        // ... existing code ...
+        <div class="form-actions">
+            <button class="btn btn-outline prev-step" data-prev="time-selection">
+                <i class="fas fa-arrow-right"></i> قبلی
+            </button>
+            <button type="submit" class="btn btn-primary next-step" data-next="confirmation" disabled>
+                تکمیل رزرو نوبت <i class="fas fa-arrow-left"></i>
+            </button>
+        </div>
+    </form>
+</section>
+
+
+
+
+
+
+
+                <!-- بخش انتخاب زمان -->
+                <section class="booking-section" id="time-selection">
+                    <h2>زمان مراجعه را انتخاب کنید</h2>
+                    <div class="date-selection">
+                        <div class="calendar-header">
+                            <button class="btn btn-outline calendar-nav" id="prev-week">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <div class="current-month">
+                                <span>2025</span>
+                                <span>May 29 - Jun 04</span>
+                            </div>
+                            <button class="btn btn-outline calendar-nav" id="next-week">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                        </div>
+                        <div class="week-days">
+                            <div class="day-column">
+                                <div class="day-header">Thu, 29 May</div>
+                                <div class="time-slots">
+                                    <button class="time-slot">08:00am</button>
+                                    <button class="time-slot">08:30am</button>
+                                    <button class="time-slot">10:30am</button>
+                                    <button class="time-slot">01:00pm</button>
+                                    <button class="time-slot">01:30pm</button>
+                                </div>
+                            </div>
+                            <div class="day-column">
+                                <div class="day-header">Fri, 30 May</div>
+                                <div class="time-slots">
+                                    <button class="time-slot">08:00am</button>
+                                    <button class="time-slot">08:30am</button>
+                                    <button class="time-slot">09:00am</button>
+                                    <button class="time-slot">10:30am</button>
+                                    <button class="time-slot">11:10am</button>
+                                    <button class="time-slot">11:30am</button>
+                                    <button class="time-slot">11:50am</button>
+                                    <button class="time-slot">12:00pm</button>
+                                </div>
+                            </div>
+                            <!-- سایر روزهای هفته به همین ترتیب -->
+                        </div>
+                    </div>
+                    <div class="section-actions">
+                        <button class="btn btn-outline prev-step" data-prev="doctor-selection">
+                            <i class="fas fa-arrow-right"></i> قبلی
+                        </button>
+                        <button class="btn btn-primary next-step" data-next="info-completion" disabled>
+                            ادامه <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </section>

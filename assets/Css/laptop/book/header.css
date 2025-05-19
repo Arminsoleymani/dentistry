@@ -1,0 +1,847 @@
+/* استایل‌های پایه */
+.booking-page {
+    font-family: 'IRANSans', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: #00a3ad;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #008c95;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #00a3ad;
+    border: 1px solid #00a3ad;
+}
+
+.btn-outline:hover {
+    background-color: #f0f9fa;
+}
+
+/* هدر صفحه رزرو */
+.booking-header {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.booking-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo svg {
+    height: 40px;
+}
+
+.logo span {
+    font-weight: 700;
+    color: #00a3ad;
+    font-size: 1rem;
+}
+
+.steps-indicator {
+    display: flex;
+    gap: 30px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    color: #aaa;
+}
+
+.step::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    width: 30px;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+.step.active {
+    color: #00a3ad;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+}
+
+.step.active .step-number {
+    background-color: #00a3ad;
+    color: white;
+}
+
+.step-title {
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+/* محتوای اصلی */
+.booking-container {
+    padding: 40px 0;
+}
+
+.booking-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.booking-section {
+    display: none;
+}
+
+.booking-section.active {
+    display: block;
+}
+
+.booking-section h2 {
+    color: #00a3ad;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+/* بخش انتخاب خدمت */
+.service-categories {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background-color: #f5f7fa;
+    cursor: pointer;
+    min-width: 120px;
+    transition: all 0.3s ease;
+}
+
+.category-card i {
+    font-size: 1.5rem;
+    color: #777;
+}
+
+.category-card span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.category-card.active {
+    background-color: #00a3ad;
+    color: white;
+}
+
+.category-card.active i {
+    color: white;
+}
+
+.services-list {
+    display: grid;
+    gap: 15px;
+}
+
+.service-item {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+.service-item.visible {
+    display: flex; /* نمایش آیتم‌های انتخاب شده */
+}
+
+.service-item:hover {
+    border-color: #00a3ad;
+}
+
+.section-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.section-actions button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.service-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.service-info p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.service-action {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.price {
+    font-weight: 700;
+    color: #00a3ad;
+}
+
+/* بخش انتخاب پزشک */
+.doctors-list {
+    display: grid;
+    gap: 15px;
+}
+
+.doctor-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.doctor-card:hover, .doctor-card.selected {
+    border-color: #00a3ad;
+}
+
+.doctor-card.selected {
+    background-color: #f5fbfc;
+}
+
+.doctor-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.doctor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.doctor-info {
+    flex: 1;
+}
+
+.doctor-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.doctor-info p {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.rating span {
+    color: #777;
+    margin-right: 5px;
+}
+
+.select-doctor {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.doctor-card.selected .select-doctor {
+    background-color: #00a3ad;
+    color: white;
+}
+
+/* بخش انتخاب زمان */
+.date-selection {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.date-picker {
+    flex: 1;
+    max-width: 300px;
+}
+
+.available-times {
+    flex: 2;
+}
+
+.available-times h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.time-slots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.time-slot {
+    padding: 10px;
+    background-color: #f5f7fa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.time-slot:hover {
+    background-color: #e1f5f8;
+    border-color: #00a3ad;
+}
+
+.time-slot.selected {
+    background-color: #00a3ad;
+    color: white;
+    border-color: #00a3ad;
+}
+
+/* بخش تکمیل اطلاعات */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #00a3ad;
+}
+
+.form-actions {
+    margin-top: 20px;
+}
+
+/* سایدبار خلاصه رزرو */
+.booking-summary {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 100px;
+}
+
+.booking-summary h3 {
+    color: #00a3ad;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.summary-label {
+    color: #777;
+}
+
+.summary-value {
+    font-weight: 500;
+}
+
+.summary-divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 20px 0;
+}
+
+.summary-item.total {
+    margin-top: 20px;
+}
+
+.summary-item.total .summary-label {
+    font-weight: 700;
+    color: #333;
+}
+
+.summary-item.total .summary-value {
+    font-weight: 700;
+    color: #00a3ad;
+    font-size: 1.1rem;
+}
+
+.clinic-info {
+    margin: 0 auto;
+    max-width: 1400px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.clinic-info h4 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.clinic-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.clinic-info i {
+    color: #00a3ad;
+    width: 20px;
+    text-align: center;
+}
+
+/* فوتر صفحه رزرو */
+.booking-footer {
+    background-color: #f0f4f8;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.booking-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00a3ad;
+}
+
+/* رسپانسیو */
+@media (max-width: 992px) {
+    .booking-container .container {
+        flex-direction: column;
+    }
+    
+    .booking-summary {
+        position: static;
+        margin-top: 30px;
+    }
+    
+    .date-selection {
+        flex-direction: column;
+    }
+    
+    .date-picker {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .steps-indicator {
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    
+    .step::after {
+        display: none;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .service-action {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .doctor-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 576px) {
+    .booking-content {
+        padding: 20px 15px;
+    }
+    
+    .booking-summary {
+        padding: 20px 15px;
+    }
+    
+    .category-card {
+        min-width: 100px;
+        padding: 10px 15px;
+    }
+    
+    .time-slots {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* استایل بخش تأیید نهایی */
+#confirmation {
+    display: none;
+    text-align: center;
+}
+
+#confirmation.active {
+    display: block;
+}
+
+.confirmation-content {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.confirmation-icon {
+    font-size: 5rem;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+.confirmation-details {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 30px 0;
+    text-align: right;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+.detail-label {
+    color: #777;
+    font-weight: 500;
+}
+
+.detail-value {
+    font-weight: 600;
+}
+
+.confirmation-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.confirmation-note {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.confirmation-note i {
+    margin-left: 5px;
+}
+
+/* استایل پیشنهادات ویژه */
+.special-offers {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.special-offers h4 {
+    color: #00a3ad;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.offers-list {
+    display: grid;
+    gap: 15px;
+}
+
+.offer-card {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+
+.offer-badge {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background-color: #ff5722;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.offer-card h5 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.offer-card p {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.offer-price {
+    display: block;
+    font-weight: 700;
+    color: #00a3ad;
+    margin: 10px 0;
+}
+
+.offer-card .btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+/* رسپانسیو برای بخش‌های جدید */
+@media (max-width: 768px) {
+    .confirmation-content {
+        padding: 20px 15px;
+    }
+    
+    .confirmation-actions {
+        flex-direction: column;
+    }
+    
+    .confirmation-actions .btn {
+        width: 100%;
+    }
+}
+
+
+/* بخش انتخاب زمان */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.calendar-nav {
+    padding: 8px 12px;
+    font-size: 1.1rem;
+}
+
+.current-month {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+}
+
+.current-month span:first-child {
+    font-size: 1.2rem;
+    color: #00a3ad;
+}
+
+.week-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.day-column {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    min-width: 150px;
+}
+
+.day-header {
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
+    color: #333;
+}
+
+.time-slots {
+    display: grid;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.time-slot {
+    padding: 10px;
+    text-align: center;
+    background-color: #f5f7fa;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.time-slot:hover {
+    background-color: #e1f5f8;
+    border-color: #00a3ad;
+}
+
+.time-slot.selected {
+    background-color: #00a3ad;
+    color: white;
+    border-color: #00a3ad;
+}
